@@ -6,15 +6,15 @@ import {
   HostListener,
   OnInit,
 } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-
-declare var Twilio: any;
+import * as TwilioSync from 'twilio-sync';
+import axios from 'axios';
 
 @Component({
   selector: 'app-whiteboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './whiteboard.component.html',
   styleUrl: './whiteboard.component.scss',
 })
@@ -30,16 +30,15 @@ export class WhiteboardComponent implements OnInit, AfterViewInit {
   message: string = '';
   syncClient: any;
 
-  constructor(private http: HttpClient) {}
-
   ngOnInit(): void {
     this.initializeSyncClient();
   }
 
   initializeSyncClient(): void {
-    this.http.get('http://localhost:8050/whiteboard').subscribe(
-      (tokenResponse: any) => {
-        this.syncClient = new Twilio.Sync.Client(tokenResponse.token, {
+    axios
+      .get('http://localhost:8050/whiteboard')
+      .then((response: any) => {
+        this.syncClient = new TwilioSync.Client(response.data.token, {
           logLevel: 'info',
         });
         this.syncClient.on('connectionStateChanged', (state: string) => {
@@ -49,11 +48,10 @@ export class WhiteboardComponent implements OnInit, AfterViewInit {
             this.message = 'Sync is live!';
           }
         });
-      },
-      (error: any) => {
+      })
+      .catch((error: any) => {
         console.error('Error fetching token:', error);
-      }
-    );
+      });
   }
 
   ngAfterViewInit(): void {
