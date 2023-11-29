@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  height: 100%;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+flex-grow: 1;
+
+  .logo {
+    margin-left: 24px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    h5 {
+      color: #000;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p {
+      color: #000;
+      font-size: 16px;
+    }
+  }
+
+  .actions-wrapper {
+    display: flex;
+    height: 90%;
+    margin-inline: 24px;
+  }
+
+  .whiteboard-wrapper {
+    width: 65%;
+    flex-grow: 1;
+    height: 100%;
+
+    .whiteboard {
+      height: 100%;
+    }
+  }
+
+  .second-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 35%;
+    flex-grow: 1;
+
+    .resources {
+      background-color: gray;
+      min-height: 300px;
+
+    }
+
+    .chat {
+      background-color: red;
+      min-height: 300px;
+    }
+  }
+}
