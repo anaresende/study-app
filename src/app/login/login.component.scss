@@ -1,0 +1,33 @@
+.login-wrapper {
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-card {
+    min-height: 400px;
+    min-width: 400px;
+    background-color: #1a1a1a;
+
+
+    .logo {
+      margin-left: 24px;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      h5 {
+        color: #fff;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      p {
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+}
