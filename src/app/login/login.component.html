@@ -5,16 +5,22 @@
       <p>study made easy</p>
     </div>
 
-    <form>
+    <form class="form">
       <mat-form-field class="example-full-width">
-        <mat-label>Favorite food</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <mat-label>your name here</mat-label>
+        <input matInput />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Leave a comment</mat-label>
-        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        <mat-label>your password here</mat-label>
+        <input matInput value="" />
       </mat-form-field>
     </form>
+    <button class="submit" mat-button (click)="handleLoginSubmit()">
+      Log In
+    </button>
+    <button class="submit" mat-button (click)="handleRegisterClick()">
+      Don't have an account ? Register here!
+    </button>
   </mat-card>
 </div>
