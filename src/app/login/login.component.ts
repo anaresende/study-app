@@ -44,6 +44,8 @@ export class LoginComponent {
         // Handle error response here
         console.error('Login failed!', error);
       });
+
+    this.router.navigate(['/whiteboard']);
   }
 
   handleRegisterClick() {

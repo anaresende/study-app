@@ -4,11 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(../../assets/images/background3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   .login-card {
     min-height: 450px;
     min-width: 400px;
-    background-color: #1a1a1a;
+    background-color: #000;
     margin-bottom: 24px;
 
 
@@ -20,13 +24,13 @@
       align-items: start;
 
       h5 {
-        color: #fff;
+        color:#F4EAE0;
         font-size: 24px;
         margin: 0;
       }
 
       p {
-        color: #fff;
+        color:#F4DFC8;
         font-size: 16px;
       }
     }
@@ -43,5 +47,11 @@
     height: 56px;
     margin-inline: 24px;
     margin-top: 12px;
+    background-color: #F4DFC8;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color:  #1a1a1a;
   }
 }
